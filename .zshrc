@@ -93,7 +93,7 @@ alias t='tree -aC --dirsfirst --sort name'
 #if type -a customfetch &> /dev/null; then
 #    customfetch
 #else
-    echo -en "\n  \033[43;30m $(date '+%a %d %B %Y') \033[0m \033[30;107m $USER \033[100;97m $(</etc/hostname) \033[0m \033[44m $(grep -Po "(?<=PRETTY_NAME=\")(.*)(?=\")" /usr/lib/os-release) \033[97;46m ${$(uname -r)%%-*} \033[0m \033[42m ${SHELL##*/} \033[0m $(uptime -p | sed -r 's/up\s//;s/([[:digit:]]+)\s(\w)\w*/\1\2/g;s/,//')\n\n"
+    echo -en "\n  \033[43;30m $(date '+%a %d %B %Y') \033[0m \033[30;107m $USER \033[100;97m $(</etc/hostname) \033[0m \033[44m $(grep -Po "(?<=PRETTY_NAME=\")(.*)(?=\")" /usr/lib/os-release) \033[97;46m ${$(uname -r)%%-*} \033[0m \033[42m ${0##*/} \033[0m $(uptime -p | sed -r 's/up\s//;s/([[:digit:]]+)\s(\w)\w*/\1\2/g;s/,//')\n\n"
 #fi
 eval "$(posh init zsh --config ~/.config/posh/my.json)"
 # TODO replace posh
