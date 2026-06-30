@@ -107,4 +107,4 @@ export ZSH_PLUGINS_DIR=${XDG_DATA_HOME}/zsh/plugins/
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # show directory preview
 source ${ZSH_PLUGINS_DIR}/fzf-tab/fzf-tab.plugin.zsh # https://github.com/Aloxaf/fzf-tab
 source ~/.config/broot/launcher/bash/br
-source ${ZSH_PLUGINS_DIR}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source ${ZSH_PLUGINS_DIR}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh # https://github.com/zdharma-continuum/fast-syntax-highlighting

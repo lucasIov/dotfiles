@@ -1,0 +1,146 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "version": 3,
+  "palette": {
+    "rosewater": "#F4DBD6",
+    "flamingo" : "#F0C6C6",
+    "pink"     : "#F5BDE6",
+    "mauve"    : "#C6A0F6",
+    "red"      : "#ED8796",
+    "maroon"   : "#EE99A0",
+    "peach"    : "#F5A97F",
+    "yellow"   : "#EED49F",
+    "green"    : "#A6DA95",
+    "teal"     : "#8BD5CA",
+    "sky"      : "#91D7E3",
+    "sapphire" : "#b7bdf8",
+    "blue"     : "#8AADF4",
+    "lavender" : "#B7BDF8",
+    "text"     : "#494D64",
+    "subtext1" : "#b8c0e0",
+    "subtext0" : "#a5adcb",
+    "overlay2" : "#939ab7",
+    "overlay1" : "#8087a2",
+    "overlay0" : "#6e738d",
+    "surface2" : "#5b6078",
+    "surface1" : "#494d64",
+    "surface0" : "#363a4f",
+    "base"     : "#24273a",
+    "mantle"   : "#1e2030",
+    "crust"    : "#181926"
+  },
+  "secondary_prompt": {
+    "template": "<p:blue> </>",
+    "foreground": "p:text",
+    "background": "transparent"
+  },
+  "console_title_template": "as {{.UserName}} in {{ .PWD }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": []
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "filler": "<p:overlay0>─</>",
+      "segments": [
+        {
+          "foreground": "p:overlay0",
+          "type": "text",
+          "template": "─"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:green",
+          "properties": {
+            "folder_icon": " \ue5fe ",
+            "home_icon": "~",
+            "style": "agnoster_short",
+            "max_depth": 2
+          },
+          "template": "{{ .Path }}{{ if not .Writable }}<p:red> 󰌾</>{{ end }}",
+          "type": "path"
+        },
+        {
+          "foreground": "p:teal",
+          "properties": {
+            "fetch_package_manager": true
+          },
+          "template": " \ued0d",
+          "type": "node"
+        },
+        {
+          "foreground": "p:peach",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "options": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          // "template": " {{ .HEAD }}",
+          "template": "{{ if not .UpstreamGone }} {{ .UpstreamIcon }}{{ end }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}",
+          "type": "git"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "p:red",
+          "template": "{{ reason .Code }} ",
+          "type": "status"
+        },
+        {
+          "type": "executiontime",
+          "template": "{{ .FormattedMs }} ",
+          "options": {
+            "threshold": 500,
+            "style": "austin"
+          }
+        },
+        {
+          "foreground": "p:sapphire",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "template": "{{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:blue",
+          "template": "",
+          "style": "plain",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
