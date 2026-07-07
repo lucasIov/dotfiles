@@ -1,0 +1,32 @@
+#!/bin/bash
+
+XDG_DATA_HOME=$HOME/.local/share
+
+mkdir /tmp/dotfiles
+mkdir -p ~/.local/bin
+
+## posh
+curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
+mv ~/.local/bin/oh-my-posh ~/.local/bin/posh
+
+## fzf
+curl -L https://github.com/junegunn/fzf/releases/download/v0.74.0/fzf-0.74.0-linux_amd64.tar.gz -o /tmp/dotfiles/fzf.tar.gz
+tar -C ~/.local/bin -xf /tmp/dotfiles/fzf.tar.gz
+
+## bat
+curl -L https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-unknown-linux-gnu.tar.gz -o /tmp/dotfiles/bat.tar.gz
+tar -C ~/.local/bin -xf /tmp/dotfiles/bat.tar.gz bat-v0.26.1-x86_64-unknown-linux-gnu/bat --strip-components=1
+# TODO: mv autocomplition & man page
+
+# install zsh plugin
+ZSH_PLUGINS_DIR=${XDG_DATA_HOME}/zsh/plugins/
+
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_PLUGINS_DIR}/fzf-tab
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${ZSH_PLUGINS_DIR}/fast-syntax-highlighting
+
+# copy config file
+# TODO
+
+# set zsh as default
+ipa user-mod $USER --shell /bin/zsh
+

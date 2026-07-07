@@ -22,12 +22,15 @@ return {
     end
   },
 
-  --[[{ 'romgrk/barbar.nvim', -- the preaty tab bar
-    dependencies = {
-      'lewis6991/gitsigns.nvim', -- for git status
-      'nvim-tree/nvim-web-devicons', -- for file icons
-    },
-  },]]
+  { "folke/zen-mode.nvim",
+    opts = {
+      window = {
+        backdrop = 0.95,
+        width = 120,
+        height = 1,
+      },
+    }
+  },
 
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 } -- the cool color
 }

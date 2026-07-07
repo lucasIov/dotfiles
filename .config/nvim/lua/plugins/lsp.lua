@@ -14,7 +14,7 @@ return {
           "rust_analyzer",
           "asm_lsp",
           "bashls",
-          -- "clangd",
+          "clangd",
           "oxfmt", -- { "javascript", "javascriptreact", "typescript", "typescriptreact", "toml", "json", "jsonc", "json5", "yaml", "html", "vue", "handlebars", "css", "scss", "less", "graphql", "markdown" }
         }
       })
@@ -29,6 +29,7 @@ return {
       vim.lsp.config("rust_analyzer", { capabilities = cmp_cap })
       vim.lsp.config("asm_lsp", { capabilities = cmp_cap })
       vim.lsp.config("bashls", { capabilities = cmp_cap })
+      vim.lsp.config("clangd", { capabilities = cmp_cap })
       vim.lsp.config("oxfmt", { capabilities = cmp_cap })
     end
   },

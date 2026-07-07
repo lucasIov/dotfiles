@@ -106,5 +106,12 @@ export ZSH_PLUGINS_DIR=${XDG_DATA_HOME}/zsh/plugins/
 # === fzf-tab ===
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # show directory preview
 source ${ZSH_PLUGINS_DIR}/fzf-tab/fzf-tab.plugin.zsh # https://github.com/Aloxaf/fzf-tab
-source ~/.config/broot/launcher/bash/br
 source ${ZSH_PLUGINS_DIR}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+
+
+# === FOR 42 ===
+export USER='liovine'
+export MAIL='lucas.iovine@learner.42.tech'
+
+

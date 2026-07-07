@@ -20,4 +20,6 @@ vim.keymap.set("n", "<c-b>", ":Neotree filesystem toggle left<cr>", { desc = "to
 vim.keymap.set("n", "<tab>",   ">>", {}) -- so much easier than (> & <)
 vim.keymap.set("n", "<s-tab>", "<<", {})
 
+-- zen mode
+vim.keymap.set("n", "<leader>z", ":ZenMode<cr>")
 
