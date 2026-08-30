@@ -1,0 +1,4 @@
+font-family = "JetBrainsMono Nerd Font"
+shell-integration = zsh
+font-size = 10
+maximize = true
