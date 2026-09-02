@@ -8,7 +8,7 @@ mkdir -p ~/.local/bin
 # === zsh ===
 # TODO: check if zsh is installed
 
-ln .zshrc ~/.zshrc
+ln $(realpath .zshrc) ~/.zshrc
 
 # install zsh plugin
 ZSH_PLUGINS_DIR=${XDG_DATA_HOME}/zsh/plugins/
@@ -22,14 +22,14 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ${ZSH_PL
 # === nvim ===
 # TODO: check if nvim is installed
 
-ln -s ./.config/nvim ~/.config/nvim
+ln -s $(realpath ./.config/nvim) ~/.config/nvim
 
 # === posh ===
 # TODO: if posh is already install continue
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 mv ~/.local/bin/oh-my-posh ~/.local/bin/posh
-mkdir -p .config/posh
-ln .config/posh/my.json ~/.config/posh/my.json
+mkdir -p ~/.config/posh
+ln $(realpath .config/posh/my.json) ~/.config/posh/my.json
 
 # === fzf ===
 # TODO: if fzf is already install continue
@@ -43,8 +43,8 @@ tar -C ~/.local/bin -xf /tmp/dotfiles/fzf.tar.gz
 # TODO: if bat is already install continue
 curl -L https://github.com/sharkdp/bat/releases/download/v0.26.1/bat-v0.26.1-x86_64-unknown-linux-gnu.tar.gz -o /tmp/dotfiles/bat.tar.gz
 tar -C ~/.local/bin -xf /tmp/dotfiles/bat.tar.gz bat-v0.26.1-x86_64-unknown-linux-gnu/bat --strip-components=1
-mkdir -p .config/bat/
-ln .config/bat/config ~/.config/bat/config
+mkdir -p ~/.config/bat/
+ln $(realpath .config/bat/config) ~/.config/bat/config
 
 # man: /usr/share/man/man1/bat.1.gz
 # autocomplition zsh: /usr/share/zsh/site-functions/_bat
