@@ -22,4 +22,5 @@ require("lazy").setup("plugins")
 
 require('keybinds')
 require('options')
+-- require('lsp_hover').setup({}) -- https://gist.github.com/OXY2DEV/645c90df32095a8a397735d0be646452 -- interesting but not ready as it is
 

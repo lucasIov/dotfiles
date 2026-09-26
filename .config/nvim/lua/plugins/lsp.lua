@@ -16,6 +16,8 @@ return {
           "bashls",
           "clangd",
           "ts_ls",
+          "glsl_analyzer",
+          "marksman"
         }
       })
     end,
@@ -23,15 +25,17 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local cmp_cap = require('blink.cmp').get_lsp_capabilities()
 
-      vim.lsp.config("lua_ls", { capabilities = capabilities })
-      vim.lsp.config("rust_analyzer", { capabilities = capabilities })
-      vim.lsp.config("asm_lsp", { capabilities = capabilities })
-      vim.lsp.config("bashls", { capabilities = capabilities })
-      vim.lsp.config("lua_ls", { capabilities = capabilities })
-      vim.lsp.config("clangd", { capabilities = capabilities })
-      vim.lsp.config("ts_ls", { capabilities = capabilities })
+      vim.lsp.config("lua_ls", { capabilities = cmp_cap })
+      vim.lsp.config("rust_analyzer", { capabilities = cmp_cap })
+      vim.lsp.config("asm_lsp", { capabilities = cmp_cap })
+      vim.lsp.config("bashls", { capabilities = cmp_cap })
+      vim.lsp.config("clangd", { capabilities = cmp_cap })
+      vim.lsp.config("ts_ls", { capabilities = cmp_cap })
+      vim.lsp.config("glsl_analyzer", { capabilities = cmp_cap })
+      vim.lsp.config("marksman", { capabilities = cmp_cap })
     end
   },
+  { "smjonas/inc-rename.nvim", opts = {} }
 }

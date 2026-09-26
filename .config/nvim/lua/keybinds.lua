@@ -9,9 +9,12 @@ vim.keymap.set('n', '<leader>fh', tl_b.help_tags,  { desc = 'Telescope help tags
 vim.keymap.set('t', '<C-Esc>', [[<C-\><C-n>]], { desc = 'close the terminal' })
 
 -- lsp
-vim.keymap.set('n', 'K',  vim.lsp.buf.hover, { desc = 'display info for the current ' })
+-- vim.keymap.set('n', 'K',  vim.lsp.buf.hover, { desc = 'display info for the current ' })
+vim.keymap.set('n', 'K',  function () require("pretty_hover").hover() end, { desc = 'display info for the current ' })
 -- vim.keymap.set('n', 'gd', vim.lsp.definition, {})
 -- vim.keymap.set({'n', 'gd'}, 'rleader>ca', vim.lsp.code_action, {})
+
+vim.keymap.set("n", "<leader>r", ":IncRename ")
 
 -- neotree
 vim.keymap.set("n", "<c-b>", ":Neotree filesystem toggle left<cr>", { desc = "toggle the filesystem panel" })
@@ -22,4 +25,4 @@ vim.keymap.set("n", "<s-tab>", "<<", {})
 
 vim.keymap.set("v", "<tab>",   ">", {})
 vim.keymap.set("v", "<s-tab>", "<", {})
-
+-- vim.api.nvim_set_keymap("n", "<leader>m", "<CMD>Markview<CR>", { desc = "Toggle `markview` globally" })

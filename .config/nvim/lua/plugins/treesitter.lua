@@ -10,15 +10,14 @@ return {
       ts.install({
           "asm",
           "bash",
-          "c", "cpp",
+          "c", "cpp", "glsl", "printf",
           "css", "html", "javascript", "php", "jsdoc",
           "lua", "luadoc", "luap",
-          "markdown", "markdown_inline",
+          "markdown", "markdown_inline", "latex", "typst",
           "python",
           "vim", "vimdoc",
           "toml", "json", "xml", "yaml",
           "diff",
-          "printf",
           "regex",
           -- "query", "tsx", "typescript",
         })
