@@ -33,3 +33,5 @@ vim.diagnostic.config({
 -- Local project config
 vim.o.exrc = true
 
+-- bold, double, none, rounded, shadow, single, solid
+vim.o.winborder = 'rounded'

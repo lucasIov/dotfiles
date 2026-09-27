@@ -27,7 +27,10 @@ return {
     config = function()
       local cmp_cap = require('blink.cmp').get_lsp_capabilities()
 
-      vim.lsp.config("lua_ls", { capabilities = cmp_cap })
+      vim.lsp.config("lua_ls", {
+        capabilities = cmp_cap,
+        settings = { Lua = { diagnostics = { globals = { "vim" }}}}
+      })
       vim.lsp.config("rust_analyzer", { capabilities = cmp_cap })
       vim.lsp.config("asm_lsp", { capabilities = cmp_cap })
       vim.lsp.config("bashls", { capabilities = cmp_cap })

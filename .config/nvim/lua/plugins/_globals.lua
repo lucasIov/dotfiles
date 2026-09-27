@@ -105,6 +105,16 @@ return {
     opts = {}
   },
 
+  {
+    {
+      'Bekaboo/dropbar.nvim',
+      -- optional, but required for fuzzy finder support
+      dependencies = {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
+      },
+    }
+  }
   --[[{ 'romgrk/barbar.nvim', -- the preaty tab bar
     dependencies = {
       'lewis6991/gitsigns.nvim', -- for git status
